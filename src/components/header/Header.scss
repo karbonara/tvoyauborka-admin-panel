@@ -1,0 +1,132 @@
+.nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 48px;
+  border-bottom: 1px solid #B6BEC8;
+
+  .nav__text {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #4C75F2;
+
+    span {
+      border-bottom: 2px dashed #4C75F2;
+      cursor: pointer;
+    }
+
+    img {
+      margin-right: 12px;
+    }
+  }
+
+  .nav__bell {
+    cursor: pointer;
+    border: none;
+    background: inherit;
+  }
+
+  .nav__info {
+    width: 262px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav__user {
+    cursor: pointer;
+  }
+
+  .nav__modal-wrapper {
+    position: relative;
+  }
+
+  .nav__modal {
+    position: absolute;
+    width: 276px;
+    bottom: -147px;
+    padding: 16px;
+    right: 0;
+    border-radius: 10px;
+    background: #fff;
+    filter: drop-shadow(0px 18.4868px 36.9737px rgba(144, 179, 236, 0.36));
+    z-index: 9999;
+
+    .nav__modal-user-mail {
+      margin-bottom: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 22px;
+      color: #383B46;
+    }
+
+    .nav__modal-user-name {
+      margin-bottom: 9px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      color: #60626B;
+    }
+
+    .modal__buttons {
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid rgba(218, 218, 218, 0.3);
+    }
+
+    .modal__button {
+      padding: 6px 22px;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      color: #FFFFFF;
+      background: #4C75F2;
+      border-radius: 50px;
+      transition: 0.3s;
+
+      &:hover {
+        background: #3a66e9;
+      }
+    }
+
+    .modal__button-exit {
+      padding: 6px 22px;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      color: #6481DC;
+      border: 1px solid #6481DC;
+      border-radius: 50px;
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        color: #FFFFFF;
+        background: #6481DC;
+      }
+    }
+  }
+}
+
+@media(max-width: 482px) {
+  .nav__wrapper {
+    .nav__info {
+      justify-content: flex-end;
+      width: 212px;
+    }
+  }
+
+  .nav__bell {
+    margin-right: 20px;
+  }
+
+  .localization {
+    display: none !important;
+  }
+}

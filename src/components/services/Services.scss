@@ -1,0 +1,134 @@
+.services__wrapper {
+  width: 600px;
+  padding: 26px 0;
+}
+
+.services__main-text {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 12px;
+
+  .services__text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #B6BEC8;
+  }
+
+  .services__label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #4C75F2;
+
+    img {
+      margin-left: 10px;
+    }
+  }
+}
+
+.services__items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  .services__item {
+    width: 166px;
+    padding: 25px 12px;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px rgba(144, 179, 236, 0.211);
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: 1px 1px 5px rgba(144, 179, 236, 0.29);
+    }
+
+    .services__item-title {
+      margin-bottom: 4px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      color: #14161D;
+    }
+
+    .services__item-price {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: #14161D;
+      margin-bottom: 14px;
+    }
+
+    .services__item-info {
+      text-transform: uppercase;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      color: #C2C2C2;
+
+      img {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+@media(max-width: 1700px) {
+  .services__wrapper {
+    width: 560px;
+  }
+}
+
+@media(max-width: 1460px) {
+  .services__wrapper {
+    width: 444px;
+  }
+
+}
+
+@media(max-width: 1220px) {
+  .services__wrapper {
+    width: 100%;
+  }
+
+  .services__items {
+    .services__item {
+      width: 28%;
+    }
+  }
+}
+
+@media(max-width: 960px) {
+  .services__items {
+    flex-wrap: wrap;
+
+    .services__item {
+      width: 174px;
+      margin: 22px 0;
+    }
+  }
+}
+
+@media(max-width: 400px) {
+  .services__items {
+    .services__item {
+      width: 154px;
+    }
+  }
+}
+
+@media(max-width: 350px) {
+  .services__items {
+    .services__item {
+      width: 138px;
+    }
+  }
+}
