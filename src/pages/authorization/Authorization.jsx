@@ -19,6 +19,7 @@ const Authorization = () => {
   const onSubmit = async (values) => {
     const data = await dispatch(fetchAuth(values));
     localStorage.setItem('token', data.payload.accessToken);
+
     if (!data.payload) {
       return alert('Не удалось авторизоваться!');
     }

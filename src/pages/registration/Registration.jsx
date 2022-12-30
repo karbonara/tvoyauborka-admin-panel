@@ -18,6 +18,7 @@ const Registration = () => {
 
   const onSubmit = async (values) => {
     const data = await dispatch(fetchRegister(values));
+    localStorage.setItem('token', data.payload.accessToken);
 
     if (!data.payload) {
       return alert('Не удалось регистрироваться!');
@@ -45,7 +46,6 @@ const Registration = () => {
             Логин
             <input {...register("email", { required: 'Укажите логин' })} type="" />
           </label>
-
           <label>
             Пароль
             <input {...register("password")} type="password" />
