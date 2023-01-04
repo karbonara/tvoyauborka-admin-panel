@@ -13,6 +13,12 @@ export const fetchUserInfo = createAsyncThunk('user/fetchUserInfo', async () => 
   return data;
 });
 
+// Изменение информации о своём аккаунте
+export const fetchUserInfoChange = createAsyncThunk('user/fetchUserInfoChange', async () => {
+  const { data } = await axios.put('/api/user/info/settings');
+  return data;
+});
+
 // Получение списка заказов, привязанных к менеджеру
 export const fetchUserInfoManager = createAsyncThunk('user/fetchUserInfoManager', async () => {
   const { data } = await axios.get('/api/user/info/orders/manager');
@@ -65,6 +71,19 @@ const userSlice = createSlice({
       state.user.status = 'error';
     },
 
+    // Изменение информации о своём аккаунте
+    [fetchUserInfoChange.pending]: (state) => {
+      state.user.status = [];
+      state.user.status = 'loading';
+    },
+    [fetchUserInfoChange.fulfilled]: (state, actions) => {
+      state.user.items = actions.payload;
+      state.user.status = 'loaded';
+    },
+    [fetchUserInfoChange.rejected]: (state) => {
+      state.user.status = [];
+      state.user.status = 'error';
+    },
 
     // Получение списка заказов, привязанных к менеджеру
     [fetchUserInfoManager.pending]: (state) => {

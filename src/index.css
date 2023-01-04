@@ -21,6 +21,7 @@ main {
   flex-wrap: wrap;
   padding: 12px 48px;
   background: #F6F7F9;
+  height: 100vh;
 }
 .page__main-container {
   width: 684px;
