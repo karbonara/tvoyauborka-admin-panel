@@ -40,36 +40,40 @@ const Setting = () => {
         <div className="clients">
           <div className="setting__block">
             <div className="setting__block-title">Почта - </div>
-            <div>{user.items.email}</div>
-            <button>Изменить</button>
+            <span>
+              <div>{user.items.email}</div>
+              <button>Изменить</button>
+            </span>
           </div>
           <div className="setting__block">
             <div className="setting__block-title">Имя - </div>
             {
               user.items.name ?
-                (<><div>{user.items.name}</div><button>Изменить</button></>)
+                (<span><div>{user.items.name}</div><button>Изменить</button></span>)
                 :
-                (<><div>Напишите имя</div><button>Добавить</button></>)
+                (<span><div>Напишите имя</div><button>Добавить</button></span>)
             }
           </div>
           <div className="setting__block">
             <div className="setting__block-title">Пароль - </div>
-            <div>*******</div>
-            <button>Изменить</button>
+            <span>
+              <div>*******</div>
+              <button>Изменить</button>
+            </span>
           </div>
           <div className="setting__block">
             <div className="setting__block-title">Номер телефона - </div>
             {
               user.items.phone_number ?
-                (<>
+                (<span>
                   <div>{user.items.phone_number}</div>
                   <button>Изменить</button>
-                </>)
+                </span>)
                 :
                 (<form onSubmit={handleSubmit(onSubmit)}>
                   <input
                     {...register('phone_number')}
-                    placeholder="Напишите номер телефона" type="number" />
+                    placeholder="+79160006901020" type="number" />
                   <button type="submit">Добавить</button>
                 </form>)
             }
