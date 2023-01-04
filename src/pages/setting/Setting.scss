@@ -1,0 +1,28 @@
+.setting {
+  padding: 26px 0;
+}
+
+.setting__block {
+  display: flex;
+  width: 60%;
+  padding: 12px 0;
+  justify-content: space-between;
+
+  button {
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: #4c75f2;
+    cursor: pointer;
+  }
+
+  .setting__block-title {
+    width: 152px;
+  }
+}
+
+@media (max-width: 690px) {
+  .setting__block {
+    width: 100%;
+  }
+}

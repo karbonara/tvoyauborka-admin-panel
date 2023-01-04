@@ -25,7 +25,7 @@ const Main = () => {
           <Story />
         </div>
         <div className="page__main-container">
-          <ServicesActive />
+          {/* <ServicesActive /> */}
           <div className="admin__calendar-main">
             <Calendar className="admin__calendar" onChange={onChange} value={value} />
           </div>
