@@ -15,11 +15,10 @@ const Users = () => {
 
   const isAuth = useSelector(selectIsAuth);
 
-  if (!isAuth) {
-    return <Navigate to="/auth" />
-  };
+  if (!window.localStorage.getItem('token') && !isAuth) {
+    return <Navigate to="/auth" />;
+  }
 
-  console.log(user.items);
   return (
     <div className='search'>
       <div className="search__container">

@@ -15,9 +15,9 @@ const Order = () => {
 
   const isAuth = useSelector(selectIsAuth);
 
-  if (!isAuth) {
-    return <Navigate to="/auth" />
-  };
+  if (!window.localStorage.getItem('token') && !isAuth) {
+    return <Navigate to="/auth" />;
+  }
 
   return (
     <div className="search">

@@ -13,9 +13,10 @@ const Main = () => {
   const [value, onChange] = useState(new Date());
 
   const isAuth = useSelector(selectIsAuth);
-  if (!isAuth) {
-    return <Navigate to="/auth" />
-  };
+
+  if (!window.localStorage.getItem('token') && !isAuth) {
+    return <Navigate to="/auth" />;
+  }
 
   return (
     <div className="page__wrapper">

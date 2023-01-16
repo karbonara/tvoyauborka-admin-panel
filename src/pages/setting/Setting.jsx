@@ -14,10 +14,7 @@ const Setting = () => {
   useEffect(() => {
     dispatch(fetchUserInfo());
     dispatch(fetchUserInfoChange());
-    // console.log(dispatch(fetchUserInfoChange()));
   }, []);
-
-  // console.log(user);
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -31,9 +28,9 @@ const Setting = () => {
     return data;
   }
 
-  if (!isAuth) {
-    return <Navigate to="/auth" />
-  };
+  if (!window.localStorage.getItem('token') && !isAuth) {
+    return <Navigate to="/auth" />;
+  }
   return (
     <div className="page__wrapper">
       <div className="search setting">
