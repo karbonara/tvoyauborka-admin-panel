@@ -14,19 +14,19 @@ const Users = () => {
   }, []);
 
   const isAuth = useSelector(selectIsAuth);
-
+  console.log(user.items);
   if (!window.localStorage.getItem('token') && !isAuth) {
     return <Navigate to="/auth" />;
   }
 
   return (
-    <div className='search'>
+    <div className="search">
       <div className="search__container">
         <input type="text" placeholder="Введите телефон" />
       </div>
       <div className="clients">
-        {user.items.email}
-        {/* {user.items.map((item, index) => (
+        {/* {user.items.email} */}
+        {user.items.map((item, index) => (
           <div key={index} className="client">
             <div className="client__container">
               <div className="client__text">Email: {item.email}</div>
@@ -40,7 +40,7 @@ const Users = () => {
               <div className="client__text">TIN: {item.TIN}</div>
             </div>
           </div>
-        ))} */}
+        ))}
       </div>
     </div>
   )

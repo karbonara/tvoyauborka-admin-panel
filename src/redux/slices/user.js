@@ -14,8 +14,8 @@ export const fetchUserInfo = createAsyncThunk('user/fetchUserInfo', async () => 
 });
 
 // Изменение информации о своём аккаунте
-export const fetchUserInfoChange = createAsyncThunk('user/fetchUserInfoChange', async () => {
-  const { data } = await axios.put('/api/user/info/settings');
+export const fetchUserInfoChange = createAsyncThunk('user/fetchUserInfoChange', async (params) => {
+  const { data } = await axios.put('/api/user/info/settings', params);
   return data;
 });
 
