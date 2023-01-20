@@ -31,6 +31,7 @@ const Setting = () => {
           <NameChange />
           {/* <PasswordChange /> */}
           <PhoneChange />
+          {/* {user.items.role.name === "Администратор" ? <div>Вы Администратор</div> : <div>Вы не Администратор</div>} */}
         </div>
       </div>
     </div>

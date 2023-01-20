@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "../../redux/slices/user";
 import { Navigate } from "react-router-dom";
 import { selectIsAuth } from "../../redux/slices/auth";
+import { useState } from "react";
 
 const Users = () => {
 
@@ -13,12 +14,12 @@ const Users = () => {
     dispatch(fetchUser());
   }, []);
 
+  const array = Object.values(user.items)
+
   const isAuth = useSelector(selectIsAuth);
-  console.log(user.items);
   if (!window.localStorage.getItem('token') && !isAuth) {
     return <Navigate to="/auth" />;
   }
-
   return (
     <div className="search">
       <div className="search__container">
@@ -26,7 +27,7 @@ const Users = () => {
       </div>
       <div className="clients">
         {/* {user.items.email} */}
-        {user.items.map((item, index) => (
+        {array.map((item, index) => (
           <div key={index} className="client">
             <div className="client__container">
               <div className="client__text">Email: {item.email}</div>
