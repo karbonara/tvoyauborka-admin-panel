@@ -18,7 +18,7 @@ const Header = () => {
 
   const onClickLogout = () => {
     dispatch(logout());
-    window.localStorage.removeItem('token');
+    localStorage.removeItem('token');
   };
 
   useEffect(() => {

@@ -7,6 +7,12 @@ export const fetchRole = createAsyncThunk('api/fetchRole', async (params) => {
   return data;
 });
 
+// Изменение роли пользователя
+export const fetchRoleChange = createAsyncThunk('api/fetchRoleChange', async (id) => {
+  const { data } = await axios.put(`/api/role/${id}`, id);
+  return data;
+});
+
 const initialState = {
   role: {
     items: [],
@@ -18,6 +24,7 @@ const roleSlice = createSlice({
   name: 'role',
   initialState,
   extraReducers: {
+    // Получение списка ролей пользователей
     [fetchRole.pending]: (state) => {
       state.role.status = [];
       state.role.status = 'loading';
@@ -27,6 +34,20 @@ const roleSlice = createSlice({
       state.role.status = 'loaded';
     },
     [fetchRole.rejected]: (state) => {
+      state.role.status = [];
+      state.role.status = 'error';
+    },
+
+    // Изменение роли пользователя
+    [fetchRoleChange.pending]: (state) => {
+      state.role.status = [];
+      state.role.status = 'loading';
+    },
+    [fetchRoleChange.fulfilled]: (state, actions) => {
+      state.role.items = actions.payload;
+      state.role.status = 'loaded';
+    },
+    [fetchRoleChange.rejected]: (state) => {
       state.role.status = [];
       state.role.status = 'error';
     },

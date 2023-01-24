@@ -6,21 +6,20 @@ import { fetchUserInfo, fetchUserInfoChange } from "../../redux/slices/user";
 import PhoneChange from "./PhoneChange";
 import MailChange from "./MailChange";
 import NameChange from "./NameChange";
-// import PasswordChange from "./PasswordChange";
 import "./Setting.scss";
 
 const Setting = () => {
 
   const isAuth = useSelector(selectIsAuth);
   const dispatch = useDispatch();
-  const { user } = useSelector(state => state.user);
+  // const { user } = useSelector(state => state.user);
 
   useEffect(() => {
     dispatch(fetchUserInfo());
     dispatch(fetchUserInfoChange());
-  }, []);
+  }, [dispatch]);
 
-  if (!window.localStorage.getItem('token') && !isAuth) {
+  if (!localStorage.getItem('token') && !isAuth) {
     return <Navigate to="/auth" />;
   }
   return (
@@ -29,9 +28,7 @@ const Setting = () => {
         <div className="clients">
           <MailChange />
           <NameChange />
-          {/* <PasswordChange /> */}
           <PhoneChange />
-          {/* {user.items.role.name === "Администратор" ? <div>Вы Администратор</div> : <div>Вы не Администратор</div>} */}
         </div>
       </div>
     </div>

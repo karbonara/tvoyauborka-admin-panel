@@ -12,7 +12,7 @@ const MailChange = () => {
   useEffect(() => {
     dispatch(fetchUserInfo());
     dispatch(fetchUserInfoChange());
-  }, []);
+  }, [dispatch]);
 
   const [open, setOpen] = useState(false);
   const { register, handleSubmit, reset } = useForm({
